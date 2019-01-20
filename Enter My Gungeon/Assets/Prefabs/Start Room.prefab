@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 4816846052277424}
   - component: {fileID: 33691098547167262}
   - component: {fileID: 23273842749367988}
+  - component: {fileID: 65214935598954018}
   m_Layer: 0
   m_Name: Normal Room.001
   m_TagString: Untagged
@@ -185,3 +186,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1957418726903708}
   m_Mesh: {fileID: 4300000, guid: c7e71115beb094942b9c400ceb5b3264, type: 3}
+--- !u!65 &65214935598954018
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1957418726903708}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 1, z: 20}
+  m_Center: {x: 0, y: -0.5, z: 0}
