@@ -518,6 +518,7 @@ MonoBehaviour:
   baseSpeed: 2
   health: 3
   stopDistance: 0.5
+  contactDamage: 1
 --- !u!195 &689839658
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -605,7 +606,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 689839656}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.96, y: 0, z: 2.02}
+  m_LocalPosition: {x: -1.02, y: 0, z: -2.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -732,9 +733,19 @@ Prefab:
       propertyPath: damageDelay
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114358356660801238, guid: dca2f3aea7757bb4bbca369ec978a307,
+        type: 2}
+      propertyPath: barrel
+      value: 
+      objectReference: {fileID: 869294445}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dca2f3aea7757bb4bbca369ec978a307, type: 2}
   m_IsPrefabAsset: 0
+--- !u!4 &869294445 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4719979606411168, guid: dca2f3aea7757bb4bbca369ec978a307,
+    type: 2}
+  m_PrefabInternal: {fileID: 830402285}
 --- !u!4 &914158188 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4802103281946848, guid: 578bd902c1485854ca4cdf50b3ee5a0d,

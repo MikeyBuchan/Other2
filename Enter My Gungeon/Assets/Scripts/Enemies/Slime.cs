@@ -20,6 +20,7 @@ public class Slime : Enemy_Main
 
     void OnCollisionEnter(Collision c)
     {
+        if(Vector3.Distance(transform.position, target.position) <= stopDistance)
         if (c.gameObject.tag == "Player")
         {
             c.gameObject.GetComponent<Player_Health>().health -= contactDamage;
