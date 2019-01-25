@@ -37,4 +37,10 @@ public class Enemy_Main : MonoBehaviour
             agent.speed = baseSpeed;
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, stopDistance);
+    }
 }

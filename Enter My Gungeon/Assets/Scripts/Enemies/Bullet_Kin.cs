@@ -29,7 +29,7 @@ public class Bullet_Kin : Enemy_Main
         g.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
         Destroy(g, bulletLifeTime);
 
-        yield return new WaitForSeconds(fireRate_Per_s);
+        yield return new WaitForSeconds(1f / fireRate_Per_s);
         StartCoroutine(PistolShoot());
     }
 }

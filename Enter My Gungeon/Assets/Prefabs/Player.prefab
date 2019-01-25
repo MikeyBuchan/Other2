@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23867472598482108}
   m_Layer: 10
   m_Name: Pistol
-  m_TagString: Player
+  m_TagString: Barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,8 +37,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4719979606411168}
   m_Layer: 10
-  m_Name: GunBarrelEnd
-  m_TagString: Player
+  m_Name: Barrel
+  m_TagString: Barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,9 +55,10 @@ GameObject:
   - component: {fileID: 33196458260349788}
   - component: {fileID: 23737860435284726}
   - component: {fileID: 54924429043143324}
-  - component: {fileID: 65501844794002238}
+  - component: {fileID: 136581370663663896}
   - component: {fileID: 114358356660801238}
   - component: {fileID: 114191194278528204}
+  - component: {fileID: 114035824182567136}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -100,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1588819217193568}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.31579, y: 0.47203, z: 0.579}
+  m_LocalPosition: {x: 0.2139, y: 0.44, z: 0.336}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4624013035750450}
@@ -121,10 +122,10 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100004, guid: c6e8f7f784b9d504894caea9ae7f5c8f, type: 3}
-  - {fileID: 2100004, guid: c6e8f7f784b9d504894caea9ae7f5c8f, type: 3}
-  - {fileID: 2100004, guid: c6e8f7f784b9d504894caea9ae7f5c8f, type: 3}
-  - {fileID: 2100004, guid: c6e8f7f784b9d504894caea9ae7f5c8f, type: 3}
+  - {fileID: 2100000, guid: ff8e61bf85c053948808b985cdca4be2, type: 2}
+  - {fileID: 2100000, guid: fe7ea5ebafebe214184c98e821fe4fc7, type: 2}
+  - {fileID: 2100000, guid: 653432f52f212e0418c7778caea3c9f3, type: 2}
+  - {fileID: 2100000, guid: 4a1e94730a8da6a4bafc070dcb96327a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -159,7 +160,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100002, guid: c6e8f7f784b9d504894caea9ae7f5c8f, type: 3}
+  - {fileID: 2100000, guid: d49a3ff1baeeb3d4a807aaf5cfd48f54, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -206,20 +207,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &65501844794002238
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1828159348825204}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.45115075, y: 0.9068468, z: 0.45115075}
-  m_Center: {x: 0, y: 0.4534234, z: 0}
 --- !u!95 &95421056078136924
 Animator:
   serializedVersion: 3
@@ -238,6 +227,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114035824182567136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1828159348825204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0acd191edfc199745a8d8f50448547f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 6
+  healthKeeper: 6
+  canTakeDamage: 1
+  damageDelay: 1
+  lives: {fileID: 0}
+  deathScreen: {fileID: 0}
 --- !u!114 &114191194278528204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -249,13 +255,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31988ff215cd3d64e8782e4c0431a165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dodgeRollLength: 0
+  dodgeRollLength: 2
   movementSpeed: 3.5
   cam: {fileID: 0}
-  heightOffset: 0.55
-  offset: {x: 0, y: 0, z: 0}
+  heightOffset: 0.4
   camRange: 0.0015
-  smoothSpeed: 0
+  smoothSpeed: 1
   rotationSpeedActive: 1
   rotationSpeed: 30
 --- !u!114 &114358356660801238
@@ -269,8 +274,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 371637f50e39d994f907bb12a9589fc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunBarrelEnd: {fileID: 4719979606411168}
+  barrel: {fileID: 0}
   currentGun: {fileID: 0}
   bullet: {fileID: 1996296969998206, guid: a15b7b86550d95743bbad4334f36b3b8, type: 2}
-  bulletSpeed: 200
-  bulletLifeTime: 1
+  bulletSpeed: 300
+  fireRate_Per_s: 0
+  bulletLifeTime: 1.2
+--- !u!136 &136581370663663896
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1828159348825204}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.22
+  m_Height: 0.88
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.4401506, z: -0.0060689747}

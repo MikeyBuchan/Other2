@@ -5,10 +5,11 @@ using UnityEngine;
 public class Player_Shoot : MonoBehaviour 
 {
     [Header("GunInfo")]
-    public Transform gunBarrelEnd;
+    public Transform barrel;
     public GameObject currentGun;
     public GameObject bullet;
     public float bulletSpeed;
+    public float fireRate_Per_s;
     public float bulletLifeTime;
 
 	void Start () 
@@ -26,7 +27,7 @@ public class Player_Shoot : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            GameObject g = Instantiate(bullet, gunBarrelEnd.position, transform.rotation);
+            GameObject g = Instantiate(bullet, barrel.position, transform.rotation);
             g.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
             Destroy(g, bulletLifeTime);
         }
